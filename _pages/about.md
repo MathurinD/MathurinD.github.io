@@ -15,6 +15,8 @@ I am a bioinformatician trained in both molecular and cellular biology and bioin
 
 For my PhD thesis I modelled the MAPK and PI3K pathways in neuroblastoma to suggest new targeted therapy and overcome resistance to existing ones (<a href="files/Dorel_PhD_thesis.pdf">manuscript</a>, <a href="files/Dorel_PhD_defense.pdf">slides</a>).
 
+When not doing science, I am a decent Rock 4 temps and Batchata dancer, and an adept of <a href="hiking">long hikes.
+
 <!--
 Other 
 -----
