@@ -9,32 +9,33 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2021 - today Bioinformatician in the group <a href="https://www.molgen.mpg.de/166100/Gene-Regulation-and-Systems-Biology-of-Cancer">Gene Regulation and System Biology of Cancer</a>, Max Plank Institute for Molecular Genetics, Berlin.
+    * Design and analysis of a CROPseq dataset in paediatric cancer cell lines (B-ALL, ES, HB)
+    * Design and analysis of a dropout screen with drug treatments in paediatric cancer cell lines
+    * Maintenance and development of sequencing pipelines
+* 2015 - 2021 PhD Reverse engineering signalling networks in neuroblastoma in the group of <a href='http://sys-bio.net'>Computationnal Modelling in Medicine</a>, Humboldt-Universität zu Berlin and Charité Universitätsmedizin, Berlin.
+    * Development of the R/C++ package <a href="https://github.com/molsysbio/STASNet">STASNet</a>
+    * Perturbation of a panel of neuroblastoma cell lines with targeted therapies
+    * Modelling of cell line signalling
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+Education
+======
+* 2012 - 2015 M.S in Molecular and Cellular Biology with a specialisation in Bioinformatics, École Normale Supérieure and UPMC, Paris.
+* 2010 - 2012 Classes préparatoires aux Grandes Ecoles BCPST , Hoches, Versailles.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Tissue culture
+* Sequencing on Illumina sequencers
+* Single cell sequencing
+    * <a href="https://www.10xgenomics.com/products/single-cell-gene-expression">10X</a>
+    * <a href="https://www.parsebiosciences.com/products/evercode-whole-transcriptome">Evercode</a>
+* Programming
+  * R/tidyverse
+  * python
+  * C/C++
 
 Publications
 ======
@@ -42,6 +43,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
+<!--
 Talks
 ======
   <ul>{% for post in site.talks %}
@@ -57,3 +59,4 @@ Teaching
 Service and leadership
 ======
 * Currently signed in to 43 different slack teams
+-->
