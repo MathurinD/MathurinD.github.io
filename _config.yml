@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Mathurin Dorel / Personal Page"
+title                    : "Mathurin Dorel"
 title_separator          : "-"
 name                     : &name "Mathurin Dorel"
 description              : &description "Personal page of Mathurin Dorel"
