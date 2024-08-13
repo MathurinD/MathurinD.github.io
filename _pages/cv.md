@@ -23,14 +23,14 @@ Work experience
 
 Education
 ======
-* 2012 - 2015  M.S in Molecular and Cellular Biology with a specialisation in Bioinformatics, École Normale Supérieure and UPMC, Paris.
-* 2010 - 2012  Classes préparatoires aux Grandes Ecoles BCPST , Hoches, Versailles.
+* 2012 - 2015 M.S in Molecular and Cellular Biology with a specialisation in Bioinformatics and Modelling, École Normale Supérieure and UPMC, Paris.
+* 2010 - 2012 Classes préparatoires aux Grandes Ecoles BCPST (Biologie, Chimie, Physique, Sciences de la Terre), Lycée Hoches, Versailles.
   
 Skills
 ======
 * Tissue culture
-* Sequencing on Illumina sequencers
-* Single cell sequencing library preparation
+* Sequencing on Illumina sequencers (library preparation and sequencer operation)
+* Single cell sequencing (library preparation and raw data processing)
     * <a href="https://www.10xgenomics.com/products/single-cell-gene-expression">10X</a>
     * <a href="https://www.parsebiosciences.com/products/evercode-whole-transcriptome">Evercode</a>
 * Programming
