@@ -19,16 +19,20 @@ For the full price of the experiment, add the biological sample preparation cost
 <table>
   {% for row in site.data.sequencing_costs %}
     {% if forloop.first %}
+    <thead>
     <tr>
       {% for pair in row %}
         <th>{{ pair[0] }}</th>
       {% endfor %}
     </tr>
+    </thead>
+    <tbody>
     {% endif %}
 
     {% tablerow pair in row %}
       {{ pair[1] }}
     {% endtablerow %}
   {% endfor %}
+   </tbody>
 </table>
 
