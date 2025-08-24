@@ -4,7 +4,6 @@ title: "Sequencing Costs"
 excerpt: "Sequencing cost breakdown"
 author_profile: true
 redirect_from: 
-  - /sequencing_costs/
   - /sequencing_costs.html
 ---
 
