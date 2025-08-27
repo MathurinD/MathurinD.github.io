@@ -41,9 +41,9 @@ A dropout screen is the simplest form of selection screening and simply consist 
 
 In essence we will:
 
-    - Introduce a CRISPR guide RNA (sgRNA) in each cell to remove a single gene
-    - Let the cells grow for a bit
-    - Count the number of cells with each sgRNA
+    * Introduce a CRISPR guide RNA (sgRNA) in each cell to remove a single gene
+    * Let the cells grow for a bit
+    * Count the number of cells with each sgRNA
 
 The world of dropout screens is a world of statistics. You will be using thousands of perturbations each with a chance of entry into a cell drawn from a poisson distribution. You **will** have outliers because you are sampling **a lot** of distributions (one for each knock-out). So the recommendation is to maintain an average of 400 cells per knock-out to be on the safe side. You can do less if your cell culture system is limited but it's at your own statistical risks. Sequencing costs use to be a limit as well but it should not be the case as of 2025 (hasn't been since at least 2012 when the first MiSeq came out).
 
