@@ -9,8 +9,7 @@ tags:
 toc: true
 ---
 
-# Genome-wide CRISPR screen
-## TL;DR
+# TL;DR
 
 **Total cost** ~\\$1000 for most use cases, range \\$400-10,000 (\\$0-1700 to procure the cells + \\$200-3100 for the cell culture + \\$100-1200 for sequencing)
 
@@ -18,7 +17,7 @@ toc: true
 
 **Protocol** [Yang2023](https://star-protocols.cell.com/protocols/3177)
 
-## Full story
+# Full story
 
 Today we will dive into the cost of dropout screen experiments.
 I will start with a little history and explanation of the protocol, you can also just cut short to the [cost breakdown](#cost-table).
@@ -29,7 +28,7 @@ The idea of dropout screen starts with the advent of sequencing and the discover
 A dropout screen is a specific
 -->
 
-### Rational
+## Rational
 
 Dropout screen were designed when researchers realised that it was possible to treat cells in a pooled fation with several perturbations that could then be deconvoluted.
 Dropout screens always rely on sequencing, the workhorse of modern high-throughput screening.
@@ -41,26 +40,27 @@ Now you can filter for you phenotype of interest.
 A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs will get lost, and advantageous KOs will get enriched.
 
 In essence we will:
+
     - Introduce a CRISPR guide RNA (sgRNA) in each cell to remove a single gene
     - Let the cells grow for a bit
     - Count the number of cells with each sgRNA
 
 The world of dropout screens is a world of statistics. You will be using thousands of perturbations each with a chance of entry into a cell drawn from a poisson distribution. You **will** have outliers because you are sampling **a lot** of distributions (one for each knock-out). So the recommendation is to maintain an average of 400 cells per knock-out to be on the safe side. You can do less if your cell culture system is limited but it's at your own statistical risks. Sequencing costs use to be a limit as well but it should not be the case as of 2025 (hasn't been since at least 2012 when the first MiSeq came out).
 
-### Experimental explanation
+## Experimental explanation
 
 Now that you know the process you can design your library. Don't try to reinvent the wheel, if you want to knock-out genes in model organisms there are many high performing CRISPR libraries that you can order (such as the [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) for humans). If you want to design a custom panel use existing plasmid constructs such as [lentiCRISPv2](https://www.addgene.org/52961/), order oligos with the correct overhang and clone your sequences in there with Gibson assembly. Never forget that you need non-targeting knock-outs in your library, they are necessary to compute the true effect of your effective knock-outs. As a rule of thumb, use about 10% of your library for those controls, with a max of about 1000 (which is the number of controls in the Brunello library) where you are in very safe statistical territory.
 
-### Protocol overview
+## Protocol overview
 {: #protocol}
 
-#### Cells and sgRNA library: \\$700-\\$5100 (delivery time + 1-2 week to have a healthy cell culture)
+### Cells and sgRNA library: \\$700-\\$5100 (delivery time + 1-2 week to have a healthy cell culture)
 
 Our basic scenario will be: you want to screen the whole human genome for how each coding gene affects your knock-out of interest. This is abusively referred to as genome-wide screening while coding sequences represent ~2% of the human DNA and you will only be targeting parts of those sequencing.
 As of 2025 our technology of choice will be CRISPR, and since we are in humans we will use the Brunello library which can be [ordered from addgene](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) as a lentiviral prep for \\$3400. Unless you know what you are doing or you plan on doing CROPseq/Perturb-seq, you want the lentiCRISPR v2 (Plasmid #52961) backbone. The plasmid expresses Cas9 so you save a step in the protocol and work closer to your cells of origin.
 <!-- You will want to order the lentiGuide-Puro variant if you plan on doing CROPseq, we will cover Perturb-seq in another post but know that you will need -->
 
-#### Cell culture: \\$200-\\$3100 (5-40h of technician + 24h to 21 days of cell culture)
+### Cell culture: \\$200-\\$3100 (5-40h of technician + 24h to 21 days of cell culture)
 
 The next step is to put your virus on your cells and you will aim for a multiplicity of infection (short MOI) between 0.1 and 0.3, which means that you will incubate with a ratio of 1 to 3 plasmids for every 10 cells. This is trade-off between having mostly one plasmid per cell and your cells surviving post-selection (most cells do not like being alone in a sea of medium)/not requiring billions of cells. For the Brunello library (76,441 distinct sgRNAs) this means you need ~90m cells (75k x 400 x 0.3). This represents about five 15cm dishes, ten T75 or three T225 for medium-sized cells ([other formats are possible](https://www.thermofisher.com/fr/en/home/references/gibco-cell-culture-basics/cell-culture-protocols/cell-culture-useful-numbers.html)). Give or take a factor two in each direction to account for cell size variability and density tolerance, and you will need 50-300mL of medium for each passage.<br/>
 For adherent cells plate the cells at 70% confluency 24h before adding the virus. For non-adherent cells I recommend reverse transfection where you put the virus first then the cells and spin at 800g for 1h which will get the virus in even those pesky B-cells.<br/>
@@ -68,7 +68,7 @@ Note that you will need an S2 for this kind of work. Third generation lentivirus
 
 The cost of cell culture varies between cell types so adapt to yours, but for a screen with the rather expensive [human induced pluripotent stem cells](https://www.atcc.org/cell-products/primary-cells/stem-cells/human-induced-pluripotent-stem-cells#t=productTab&numberOfResults=24) count ~250mL per medium change which should be done every day. Over a classical dropout-screen experiment of 21 days that's 5-6L of medium, taking into account the extra volume necessary during passaging. During passaging pay special care to always maintain your representation, you need to reseed at least 30m cells (75k x 400).
 
-#### Sequencing: \\$150-\\$1200 (6h of technician + 6h of sequencing)
+### Sequencing: \\$150-\\$1200 (6h of technician + 6h of sequencing)
 
 At the end of your 21 days (or other selection process such as GFP gating), it's time to lyse the cells and extract your precious DNA strands. There a multiple kits that do both, such as [Monarch](https://www.neb.com/en/products/t3010-monarch-spin-gdna-extraction-kit) or [Qiagen](https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-blood-and-tissue-kit). Be aware that most standard kits are for a few million cells so you will consume a lot of doses a whole human genome screen or use a [bulk kit](https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/blood-and-cell-culture-dna-kits). The representation rule still applies, you will lyse ~30m cells.
 
@@ -84,7 +84,7 @@ And there you have it, a CRISPR dropout screen of iPSCs with the Brunello librar
 {: #cost-table}
 *(Note: prices change so I will round them to the nearest hundred)*
 
-### iPSC scenario
+## iPSC scenario
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|
@@ -104,7 +104,7 @@ I chose on purpose a rather extreme case to show you that selection screens are 
 A custom library on the other hand will cost you more that the Brunello from addgene. 30bp oligos cost about \\$30 from most provider so for a 2000 genes library that would be \\$6000. Addgene can afford the small cost because they generated a large batch that they sell off with a comfortable margin.
 <!-- Note that addgene also provides the plasmid DNA library with the virus pool so you can always make more if needed, but beware of balancing -->
 
-### Cheapest scenario
+## Cheapest scenario
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|
@@ -121,9 +121,9 @@ A custom library on the other hand will cost you more that the Brunello from add
 
 Overall count between \\$400 and \\$10,000 for a dropout screen, with most setup leaning towards the \\$1000 mark.
 
-### Other genetic screen
+## Other genetic screen
 {: #other_genetic_screens}
 
-### Etc
+## Etc
 
 When analysing CRISPR data, you will have to account for the fact that you introduce double strand breaks in the cell's DNA. This will have differential effects based on things like copy number or relative position to the centromeres. See [Vinceti2024](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03336-1) for an overview.
