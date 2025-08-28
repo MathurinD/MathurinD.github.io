@@ -31,7 +31,7 @@ Range \\$400-10,000:
 
 Today we will dive into the cost of dropout screen experiments.
 I will start with a little history and explanation of the protocol, you can also just cut short to the [cost breakdown](#cost-table).
-I will also use "knock-out" (short "KO") for every gene that is affected by your library. In the context of CRISPR screens this is often called "guide", to get an overview of other genetic perturbations that are usable in screen see [here](#other_genetic_screens)
+I will also use "knock-out" (short "KO") for every gene that is affected by your library. In the context of CRISPR screens this is often called "guide", to get an overview of other genetic perturbations that are usable in screen see [here](#other_genetic_screens).
 
 <!--
 The idea of dropout screen starts with the advent of sequencing and the discovery/engineering of shRNA.
