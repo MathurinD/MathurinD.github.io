@@ -7,8 +7,8 @@ redirect_from:
   - /sequencing_costs.html
 ---
 
-With the ongoing [Virtual Cell Challenge](https://virtualcellchallenge.org/) and it's attractive \$100k first prize, it would be good for computational biologist who spend thousands of dollars in compute to get a good idea of the cost of generating the data they use to train their models.
-Here are different scenarios for experiments relying on sequencing. We will separate the library generation cost from the sequencing costs, as those evolve fast and highly depend on the sequencers available. We have a separate table for sequencing costs so refer to them for you exact possibilities, for this table we will consider \$3/Gb which is achievable by most state-of-the-art sequencers as of August 2025.
+With the ongoing [Virtual Cell Challenge](https://virtualcellchallenge.org/) and it's attractive \\$100k first prize, it would be good for computational biologist who spend thousands of dollars in compute to get a good idea of the cost of generating the data they use to train their models.
+Here are different scenarios for experiments relying on sequencing. We will separate the library generation cost from the sequencing costs, as those evolve fast and highly depend on the sequencers available. We have a separate table for sequencing costs so refer to them for you exact possibilities, for this table we will consider \\$3/Gb which is achievable by most state-of-the-art sequencers as of August 2025.
 Time represents the time to prepare the samples for sequencing, usually add 24h-48h for the sequencing run. If you have to generate the samples, count one to three weeks for cell culture.
 
 <!-- Cost, time (hands-on and total) -->
