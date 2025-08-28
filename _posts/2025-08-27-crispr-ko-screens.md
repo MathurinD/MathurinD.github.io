@@ -11,7 +11,12 @@ toc: true
 
 # TL;DR
 
-**Total cost** ~\\$1000 for most use cases, range \\$400-10,000 (\\$0-1700 to procure the cells + \\$200-3100 for the cell culture + \\$100-1200 for sequencing)
+**Total cost** ~\\$1000 for most use cases.
+Range \\$400-10,000:
+
++ \\$0-1700 to procure the cells
++ \\$200-3100 for the cell culture
++ \\$100-1200 for sequencing)
 
 **Question answered** What is the impact of every gene/promoter/sequence family (alone or in combination) on my phenotype of interest ?
 
@@ -37,7 +42,10 @@ The idea is a quite simple one: if you can sequence your perturbation in a quant
 Comes in shRNAs, an engineered variant of the naturally occuring siRNA which can easily expressed from plasmids that be transfected or transduced into cells.
 Add a selection process, via antibiotics and resistance genes, and a bit of statistical magic, that if you transfect cells with less than one plasmid per cell then most cells with a plasmid will have been transfected only once, and there you have it a single DNA copy of your perturbation in each cell in your culture vessel.
 Now you can filter for you phenotype of interest.
-A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs will get lost, and advantageous KOs will get enriched.
+A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs [^oncogene] will get lost, and advantageous KOs [^tumor-suppressors] will get enriched.
+
+[^oncogene] Typically lost are genes involved in cell cycle or metabolism and oncogenes.
+[^tumor-suppressors] An example of genes whose knock-outs increases cell growth are tumor suppressors such as PTEN or TP53.
 
 A quick breakdown is:
 
