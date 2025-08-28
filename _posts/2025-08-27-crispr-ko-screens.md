@@ -18,6 +18,11 @@ Range \\$400-10,000:
 + \\$200-3100 for the cell culture
 + \\$100-1200 for sequencing)
 
+**Time** 
+
+- 11-46h hands on
+- 36h-22d total
+
 **Question answered** What is the impact of every gene/promoter/sequence family (alone or in combination) on my phenotype of interest ?
 
 **Protocol** [Yang2023](https://star-protocols.cell.com/protocols/3177)
