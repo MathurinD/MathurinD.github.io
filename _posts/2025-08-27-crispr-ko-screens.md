@@ -39,11 +39,11 @@ Add a selection process, via antibiotics and resistance genes, and a bit of stat
 Now you can filter for you phenotype of interest.
 A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs will get lost, and advantageous KOs will get enriched.
 
-In essence we will:
+A quick breakdown is:
 
-    * Introduce a CRISPR guide RNA (sgRNA) in each cell to remove a single gene
-    * Let the cells grow for a bit
-    * Count the number of cells with each sgRNA
+1. Introduce a CRISPR guide RNA (sgRNA) in each cell to remove a single gene
+2. Let the cells grow for a bit
+3. Count the number of cells with each sgRNA
 
 The world of dropout screens is a world of statistics. You will be using thousands of perturbations each with a chance of entry into a cell drawn from a poisson distribution. You **will** have outliers because you are sampling **a lot** of distributions (one for each knock-out). So the recommendation is to maintain an average of 400 cells per knock-out to be on the safe side. You can do less if your cell culture system is limited but it's at your own statistical risks. Sequencing costs use to be a limit as well but it should not be the case as of 2025 (hasn't been since at least 2012 when the first MiSeq came out).
 
@@ -78,7 +78,7 @@ PCR reagents are cheap, any major biology company has kits. Pick a [high volume 
 
 With the sequencing library in tube, you can go to your favorite sequencing team and order 30m reads (1 read per cell) which will cost you between \\$30 (with NovaseqX 25B kit) and \\$1000 (with an underused NextSeq 2000 P2 kit). Amplicon libraries tend to behave differently than more complex libraries on sequencers so I would actually recommend going with the more expensive option. Interestingly enough you could also [sequence the amplicons on a nanopore promethion](https://nanoporetech.com/document/rapid-sequencing-v14-amplicon-sequencing-sqk-rbk114-24-or-sqk) for about \\$1000 (but you still need the amplified fragments, there is too much genomic DNA extracted).
 
-And there you have it, a CRISPR dropout screen of iPSCs with the Brunello library will cost you \\$5100 to procure the cells and library (this is a capital cost if you repeat the screen multiple time and/or use the cells for other purposes), ~\\$3100 for the cell culture, and \\$1200 for the sequencing (up to 10x less if multiplexing). Grand total \\$8400. You are now the proud owner of a fastq file containg 30m sequences that you will now have to map and 
+And there you have it, a CRISPR dropout screen of iPSCs with the Brunello library will cost you \\$5100 to procure the cells and library (this is a capital cost if you repeat the screen multiple time and/or use the cells for other purposes), ~\\$3100 for the cell culture, and \\$1200 for the sequencing (up to 10x less if multiplexing). Grand total \\$8400. You are now the proud owner of a fastq file containg 30m sequences that you will now have to map, normalize and quantify.
 
 ## Cost table
 {: #cost-table}
@@ -101,7 +101,7 @@ And there you have it, a CRISPR dropout screen of iPSCs with the Brunello librar
 |---------|--------|
 
 I chose on purpose a rather extreme case to show you that selection screens are really not expensive. For most cell lines medium only needs to be changed every 2-3 days so the cost can be divided accordingly, and medium is cheaper (e.g [RPMI](https://www.thermofisher.com/order/catalog/product/fr/en/11875093) which reduces the cost even further. If you look for a fast phenotype like the activity of a pathway you might not even need to change your culture medium. In such cases the cell culture cost could be as low as \\$50 for a perturbation of all human genes.
-A custom library on the other hand will cost you more that the Brunello from addgene. 30bp oligos cost about \\$30 from most provider so for a 2000 genes library that would be \\$6000. Addgene can afford the small cost because they generated a large batch that they sell off with a comfortable margin.
+A custom library on the other hand will cost you more that the Brunello from addgene. 30bp oligos cost about \\$30 from most provider so for a 2000 genes library that would be \\$6000. Addgene can afford the small cost because they generated a large batch that they sell off with a comfortable margin. For smaller panels, use [arrayed screening](https://www.thermofisher.com/fr/en/home/life-science/genome-editing/crispr-libraries.html).
 <!-- Note that addgene also provides the plasmid DNA library with the virus pool so you can always make more if needed, but beware of balancing -->
 
 ## Cheapest scenario
@@ -124,6 +124,18 @@ Overall count between \\$400 and \\$10,000 for a dropout screen, with most setup
 ## Other genetic screen
 {: #other_genetic_screens}
 
+In this post we focused on CRISPR knock-out screens where Cas9 is used to induce double-strand break in the target gene that will eventually be repared incorrectly, which inactivates the gene.
+However many more constructs exist that can be used in those screens:
+- "dead" Cas9, which cannot cut DNA, can be used to direct any kind of protein fused with it to specific genomic locations:
+    - CRISPRa fuses a transcriptional activator such as VP64 or [VPR](https://pmc.ncbi.nlm.nih.gov/articles/PMC4393883/) (VP64-p65-Rta) to activate the target gene. CRISPRa can be finicky because the promoter must be targeted without blocking the binding of the RNA polymerase elongation complex. For more details see [this addgene post](https://blog.addgene.org/crispr-activators-dcas9-vp64-sam-suntag-vpr).
+    - [CRISPRi](https://www.nature.com/articles/nprot.2013.132) fuses a transcriptional repressor such as the [KRAB domain](https://pmc.ncbi.nlm.nih.gov/articles/PMC328446/) to inactivate the target gene without introducing DNA breaks. It is a robust system.
+- [arrayed screens](https://www.nature.com/articles/s41551-024-01278-4) use the processing capability of specific Cas proteins such as Cas12 and Cas13 to target multiple genomic locations (or RNA locations for Cas13) with each construct. This can be used either to inactivate several genes in a combinatorial screen, or to ensure a high inactivation efficiency by targeting the same gene at multiple locations. While very powerful, cloning such constructs is more tricky. Luckily, you can also find published libraries (e.g [AnYin2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11754104/)).
+- "dual gRNA" libraries are similar to arrayed screen in the sense that each construct expresses multiple gRNAs, but each sgRNA pair targets closeby regions of the same target gene which induces a large deletion. They address one major challenge of Cas9 knock-outs that about a third of the indels induced by DNA-repair error will be in frame and can yield a truncated but functional protein. Those can be ordered (e.g at [vectorbuilder](https://en.vectorbuilder.com/products-services/product/dual-grna-crispr-libraries.html)).
+- "small hairpin" RNA (shRNA) use siRNA-mimicking constructs instead of gRNA, which presents the advantage of not having to express Cas9 in the target cell. They are however less efficient that CRISPR constructs.
+- [TALENs](https://pmc.ncbi.nlm.nih.gov/articles/PMC5536959/) (Transcription Activator-Like Effector Nucleases) were all the trend before the discovery of CRISPR. They consist of rather complex engineered proteins with tandem-repeat DNA-binding motifs with base specificity. TALENs construct are bulky, making them hard to transfect, and less efficient than CRISPR. You will likely never use it but at least you know it exists.
+
+[^1]: stem cells for example tend to silence Cas9, this can be aleviated by using an inducible construct for transient Cas expression.
+
 ## Etc
 
-When analysing CRISPR data, you will have to account for the fact that you introduce double strand breaks in the cell's DNA. This will have differential effects based on things like copy number or relative position to the centromeres. See [Vinceti2024](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03336-1) for an overview.
+When analysing CRISPR knock-out data, you will have to account for the fact that you introduce double strand breaks in the cell's DNA. This will have differential effects based on things like copy number or relative position to the centromeres. See [Vinceti2024](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03336-1) for an overview.
