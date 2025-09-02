@@ -1,0 +1,92 @@
+---
+title: 'Cost of a CRISPR dropout screen'
+date: 2125-01-01
+permalink: /posts/2025/09/single_ko_generation/
+tags:
+  - Experiment Costs
+  - CRISPR
+  - Knock-out
+toc: true
+---
+
+# Generation of knock-out cell lines
+
+<sub><sup>
+This post is part of a series on the cost of experiments. All costs are orders of magnitude and are susceptible to have changed between the post and your order date. All costs assume you perform the whole pipeline in house and do not include labor cost, for outsourcing a decent first estimate is to double the indicated cost.
+</sub></sup>
+
+## What does it do?
+
+Knocking-out genes in cell lines deactivates one or more gene in one or more cell lines to study the function of the gene.
+
+## Experimental Modules
+
+1. Procure cell lines and procure/generate a CRISPR plasmid (1 week - 4 weeks, 6h - 24h hands-on)
+2. Transduce the cells (48h - 2 weeks, 2h - 12h hands-on)
+3. Validate the knock-out(s) (48h, 8h hands-on)
+
+## Ops & Throughput
+**Turnaround**: 11 days - 44 days (cell culture dominates)
+**Hands-on time**: 16h - 44h
+**Parallelizability** Medium, multiple knock-outs in multiple cell lines can be done in parallel. All steps bottleneck at about the same rate with the number of samples to handle.
+**Batching** 1 to 12 recommended to keep cells passaging manageable.
+**Automation readiness**  [manual vs partial vs full automation]
+**Outsourceability** Yes, e.g [AcroBiosystem](https://www.acrobiosystems.com/A2746-Gene-knockout-Cell-Lines.html), [Cyagen](https://www.cyagen.com/custom-cell-line-models/knockout-cell-lines), [iXCells](https://ixcellsbiotech.com/preclinical-cro-services/genome-editing/), [Runtogen](https://www.runtogen.com/category/gene-editing-cell-lines/knockout-cell-lines/), [Abcam](https://www.abcam.com/en-us/technical-resources/product-overview/knockout-cell-lines?srsltid=AfmBOorPQ4cKD8fp18pjFR53cCc8cNlZgZy_gxwGW7-093WOpdiNtrcG).
+
+## Cost & Scale
+
+- Variable per run: \\$200. Range: \\$100 (cheap cell lines + plasmid in house) - \\$5000 (expensive cell line)
+- Cost breakdown:
+    + Cells: \\$0-\\$1700
+    + Transfection and cell culture: \\$100-3100
+    + Cas9 system : \\$50
+    + Knock-out validation: \\$50
+- Capex: BSL1 cell culture, BSL1 lab
+
+<!--
+- Data scale: reads/images/features generated]
+## Data API
+Raw format: [FASTQ, TIFF, etc.]
+Processed format: [count matrix, gene-level scores, feature vectors]
+Resolution: [cell-level, gene-level, transcript-level]
+
+## Analysis Ecosystem
+Tools / packages
+Common workflows
+
+## Public datasets
+-->
+
+## Pitfalls & Failure Modes
+
+- Monocalonal vs polycloncal decision. Polyclonal populations are fast to produce but can drift, monoclonal are more consistent but with a strong clonal effect so everything must be validated in several clones.
+
+## Use Cases
+
+- Studying the role of a gene
+
+## Strategic Value
+
+- Unlocks functional knowledge of the role of a target gene
+
+## Related publications
+
+- Protocol without vector [Ishibashi2020](https://www.nature.com/articles/s41598-020-79303-0)
+- Large study of single knock-outs [Rogalska2024](https://www.science.org/doi/10.1126/science.adn8105)
+
+## Order list
+
+|Item|Cost|Number of experiments|Link|
+|---------|--------|
+|Amortized cell line|\\$5|1000s|https://www.atcc.org/cell-products/primary-cells/stem-cells/human-induced-pluripotent-stem-cells#t=productTab
+|Cell culture medium 500mL|\\$200|10|https://www.atcc.org/products/acs-3002|
+|Cas9 TrueCut™ v2|\\$200|20|https://www.thermofisher.com/order/catalog/product/A36498|
+|Lipofectamine™ CRISPRMAX™ Cas9 Transfection Reagent|\\$200|20|https://www.thermofisher.com/order/catalog/product/fr/en/CMAX00003|
+|Fetal Bovine Serum|\\$800|100|https://www.thermofisher.com/order/catalog/product/A5669701|
+|---------|--------|
+|Total per xp|\\$200|1||
+|---------|--------|
+
+## Protocol variations
+
+- Modified Cas enzyme to induce silencing (CRISPRi), activation (CRISPRa), edit single nucleotides (CRISPR editing), knock-down (Cas13). Those must be transduced (with virus in BSL2 labs) and can be inducible (for time series).
