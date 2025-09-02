@@ -7,6 +7,7 @@ tags:
   - CRISPR
   - Dropout Screen
 toc: true
+excerpt: 'CRISPR screens are performed to find genes that influence a phenotype of interest.'
 ---
 
 **Total cost** ~\\$1000 for most use cases.
@@ -150,3 +151,5 @@ However many more constructs exist that can be used in those screens:
 ## Etc
 
 When analysing CRISPR knock-out data, you will have to account for the fact that you introduce double strand breaks in the cell's DNA. This will have differential effects based on things like copy number or relative position to the centromeres. See [Vinceti2024](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03336-1) for an overview.
+
+{% include costs_disclaimer.html %}
