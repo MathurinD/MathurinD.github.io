@@ -46,10 +46,10 @@ The idea is a quite simple one: if you can sequence your perturbation in a quant
 Comes in shRNAs, an engineered variant of the naturally occuring siRNA which can easily expressed from plasmids that be transfected or transduced into cells.
 Add a selection process, via antibiotics and resistance genes, and a bit of statistical magic, that if you transfect cells with less than one plasmid per cell then most cells with a plasmid will have been transfected only once, and there you have it a single DNA copy of your perturbation in each cell in your culture vessel.
 Now you can filter for you phenotype of interest.
-A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs [^oncogene] will get lost, and advantageous KOs [^tumor-suppressors] will get enriched.
+A dropout screen is the simplest form of selection screening and simply consist in letting the cells grow. Detrimental KOs [^1] will get lost, and advantageous KOs [^2] will get enriched.
 
-[^oncogene] Typically lost are genes involved in cell cycle or metabolism and oncogenes.
-[^tumor-suppressors] An example of genes whose knock-outs increases cell growth are tumor suppressors such as PTEN or TP53.
+[^1] Typically lost are genes involved in cell cycle or metabolism and oncogenes.
+[^2] An example of genes whose knock-outs increases cell growth are tumor suppressors such as PTEN or TP53.
 
 A quick breakdown is:
 
@@ -138,15 +138,16 @@ Overall count between \\$400 and \\$10,000 for a dropout screen, with most setup
 
 In this post we focused on CRISPR knock-out screens where Cas9 is used to induce double-strand break in the target gene that will eventually be repared incorrectly, which inactivates the gene.
 However many more constructs exist that can be used in those screens:
-- "dead" Cas9, which cannot cut DNA, can be used to direct any kind of protein fused with it to specific genomic locations:
-    - CRISPRa fuses a transcriptional activator such as VP64 or [VPR](https://pmc.ncbi.nlm.nih.gov/articles/PMC4393883/) (VP64-p65-Rta) to activate the target gene. CRISPRa can be finicky because the promoter must be targeted without blocking the binding of the RNA polymerase elongation complex. For more details see [this addgene post](https://blog.addgene.org/crispr-activators-dcas9-vp64-sam-suntag-vpr).
-    - [CRISPRi](https://www.nature.com/articles/nprot.2013.132) fuses a transcriptional repressor such as the [KRAB domain](https://pmc.ncbi.nlm.nih.gov/articles/PMC328446/) to inactivate the target gene without introducing DNA breaks. It is a robust system.
-- [arrayed screens](https://www.nature.com/articles/s41551-024-01278-4) use the processing capability of specific Cas proteins such as Cas12 and Cas13 to target multiple genomic locations (or RNA locations for Cas13) with each construct. This can be used either to inactivate several genes in a combinatorial screen, or to ensure a high inactivation efficiency by targeting the same gene at multiple locations. While very powerful, cloning such constructs is more tricky. Luckily, you can also find published libraries (e.g [AnYin2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11754104/)).
 - "dual gRNA" libraries are similar to arrayed screen in the sense that each construct expresses multiple gRNAs, but each sgRNA pair targets closeby regions of the same target gene which induces a large deletion. They address one major challenge of Cas9 knock-outs that about a third of the indels induced by DNA-repair error will be in frame and can yield a truncated but functional protein. Those can be ordered (e.g at [vectorbuilder](https://en.vectorbuilder.com/products-services/product/dual-grna-crispr-libraries.html)).
+- "dead" Cas9 cannot cut DNA, which avoids certain problems that can come with DNA damage [^3]. They can be used to direct any kind of protein fused with it to specific genomic locations:
+    - CRISPRa fuses a transcriptional activator such as VP64 or [VPR](https://pmc.ncbi.nlm.nih.gov/articles/PMC4393883/) (VP64-p65-Rta) to activate the target gene. CRISPRa can be finicky because the promoter must be targeted without blocking the binding of the RNA polymerase elongation complex. For more details see [this addgene post](https://blog.addgene.org/crispr-activators-dcas9-vp64-sam-suntag-vpr).
+    - [CRISPRi](https://www.nature.com/articles/nprot.2013.132) fuses a transcriptional repressor such as the [KRAB domain](https://pmc.ncbi.nlm.nih.gov/articles/PMC328446/) to inactivate the target gene without introducing DNA breaks. It is a robust system and based on where transcription is perturbed can be used to perform knock-down rather than complete inactivation of the gene.
+- RNA targeting Cas enzymes such as Cas13d and CasRx work by degrading a target RNA. The effect is dose dependent and can be used for knock-down of any intensity, with some [smart degron constructs](https://www.nature.com/articles/s41467-023-38909-4) even enabling to control the intensity with a small molecule.
+- [arrayed screens](https://www.nature.com/articles/s41551-024-01278-4) use the processing capability of specific Cas proteins such as Cas12 and Cas13 to target multiple genomic locations (or RNA locations for Cas13) with each construct. This can be used either to inactivate several genes in a combinatorial screen, or to ensure a high inactivation efficiency by targeting the same gene at multiple locations. While very powerful, cloning such constructs is more tricky. Luckily, you can also find published libraries (e.g [AnYin2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11754104/)).
 - "small hairpin" RNA (shRNA) use siRNA-mimicking constructs instead of gRNA, which presents the advantage of not having to express Cas9 in the target cell. They are however less efficient that CRISPR constructs.
-- [TALENs](https://pmc.ncbi.nlm.nih.gov/articles/PMC5536959/) (Transcription Activator-Like Effector Nucleases) were all the trend before the discovery of CRISPR. They consist of rather complex engineered proteins with tandem-repeat DNA-binding motifs with base specificity. TALENs construct are bulky, making them hard to transfect, and less efficient than CRISPR. You will likely never use it but at least you know it exists.
+- [TALENs](https://pmc.ncbi.nlm.nih.gov/articles/PMC5536959/) (Transcription Activator-Like Effector Nucleases) were all the rage before the discovery of shRNA and CRISPR. They consist of rather complex engineered proteins with base-specific tandem-repeat DNA-binding motifs. TALENs construct are bulky, making them hard to transfect, and less efficient than CRISPR. You will likely never use it but at least you know it exists.
 
-[^1]: stem cells for example tend to silence Cas9, this can be aleviated by using an inducible construct for transient Cas expression.
+[^3]: stem cells for example tend to silence Cas9, this can be aleviated by using an inducible construct for transient Cas expression.
 
 ## Etc
 
