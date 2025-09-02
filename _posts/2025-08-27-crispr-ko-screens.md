@@ -9,8 +9,6 @@ tags:
 toc: true
 ---
 
-# TL;DR
-
 **Total cost** ~\\$1000 for most use cases.
 Range \\$400-10,000:
 

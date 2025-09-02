@@ -1,6 +1,6 @@
 ---
 title: 'Cost of a CRISPR dropout screen'
-date: 2125-01-01
+date: 2025-09-02
 permalink: /posts/2025/09/single_ko_generation/
 tags:
   - Experiment Costs
