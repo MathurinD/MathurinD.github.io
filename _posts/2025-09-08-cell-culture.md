@@ -65,7 +65,7 @@ Common workflows
 
 ## Pitfalls & Failure Modes
 
-- <u>Cell line contamination</u> can take many forms:
+- Cell line contamination is something else that your cells growing in the flask. It can take many forms:
     + [bacteria and fungi](https://www.thermofisher.com/fr/fr/home/references/gibco-cell-culture-basics/biological-contamination.html) are easy to detect and deal with, they will also lead to the cells dying rapidly.
     + [Mycoplasma infection](https://www.science.org/content/blog-post/those-darn-invisible-creatures) is more subtle and should be [checked regularly](https://www.thermofisher.com/order/catalog/product/fr/en/M7006).
     + [Cross-contamination by other cell lines](https://iclac.org/databases/cross-contaminations/) is the most pernicious contamination, you want to [identify](https://www.culturecollections.org.uk/services/authenticell/search-by-name/) your cell lines when you receive them. Also check at least once a year if you grow cells in parallel as cross-contamination can also happen in your own cell culture.
