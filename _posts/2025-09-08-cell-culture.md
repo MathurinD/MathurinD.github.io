@@ -15,6 +15,10 @@ excerpt: 'Cell culture is performed to get enough cells for future experiments'
 
 Cell culture is done in most experiments to provide biological material to perturb and measure.
 
+**Input** As low as 1 cell, as many as millions.
+
+**Output** Input x 2^(growth\_time/division\_rate)
+
 ## Strategic Value
 
 - Provides cells to perturb and measure.
