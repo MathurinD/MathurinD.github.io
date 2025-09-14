@@ -71,7 +71,7 @@ Resolution: transcript-level expression, single nucleotide variants
 
 ## Analysis Ecosystem
 
-0. (ONT) 
+0. Basecalling (ONT) 
     - [dorado](https://github.com/nanoporetech/dorado): Official base caller by ONT
     - [remora](https://github.com/nanoporetech/remora)
 1. QC and cleaning
@@ -103,6 +103,8 @@ Resolution: transcript-level expression, single nucleotide variants
 
 ## Pitfalls & Failure Modes
 
+- High molecular weight RNA (>1kb) is fragile and cannot be extracted like low molecular weight RNA. Harsh mechanical manipulations like forcing through porous medium or pipetting too harshly lead to strand breakage. The recommended method is [trizol extraction](https://nanoporetech.com/document/extraction-method/rna-human-cells) which is cheap but requires good cleaning of the RNA.
+- High molecular weight RNA in water is quite viscuous (not as bad as DNA though). Don't hesitate do add more buffer to enable manipulation or start with less cells. Always pipette very slowly to avoid breaking the strands. If your solution because less viscuous after pipetting up and down repeatedly it's likely than you broke the strands.
 - Long read RNA sequencing methods relying on cDNA use polyA primers to generate the cDNA so will be exclusively composed of mRNA and lncRNA. If you are interested in other long RNAs (because if you are interested in short ones you should go for cheaper per read [short read sequencing](/posts/2025/09/short-read-sequencing)) use [polyA tailing](https://www.neb.com/en/protocols/2014/08/13/poly-a-tailing-of-rna-using-e-coli-poly-a-polymerase-neb-m0276), eventually after [ribo-depletion](https://www.neb.com/en/products/e6310-nebnext-rrna-depletion-kit-human-mouse-rat).
 
 ## Related publications
@@ -124,7 +126,7 @@ Resolution: transcript-level expression, single nucleotide variants
 |(multiplexing) cDNA-PCR Barcoding Kit V14|750|144|https://store.nanoporetech.com/eu/cdna-pcr-barcoding-kit-v14.html|
 |(direct RNA) Direct RNA Sequencing Kit|\\$600|6|https://store.nanoporetech.com/eu/direct-rna-sequencing-kit-004.html|
 |Induro® Reverse Transcriptase and 5x Induro® RT Reaction Buffer (NEB, M0681)|\\$200|20|https://www.neb.com/en-us/products/m0681-induro-reverse-transcriptase|
-|RNAse inhibitor||\\$600|100|https://www.neb.com/en/products/m0314-rnase-inhibitor-murine|
+|RNAse inhibitor|\\$600|100|https://www.neb.com/en/products/m0314-rnase-inhibitor-murine|
 |dNTP mix|\\$300|600|https://www.neb.com/en/products/n0447-deoxynucleotide-dntp-solution-mix|
 |NEBNext® Quick Ligation Module|\\$400|20|https://www.neb.com/en/products/e6056-nebnext-quick-ligation-module?srsltid=AfmBOorXl-1Gi1lRYSdY_Jho1SkcAJHKD2uDSeUBcift4YTJwUje9Aac|
 |RNAClean XP RNA and cDNA Cleanup Reagent, 40 mL|\\$1200|400|https://www.beckman.fr/reagents/genomic/cleanup-and-size-selection/rna-and-cdna/a63987|
@@ -142,6 +144,8 @@ https://gcore.ucsd.edu/isoseq-pricing
 for 20x WGS: |Revio SPRQ sequencing plate|\\$4000|4-8|https://www.pacb.com/products-and-services/consumables/hifi-sequencing-kits/|
 pacbio = 250 + 140 + 200 + 1 + 0.2
 -->
+
+**Pacbio** starting from extracted RNA.
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
