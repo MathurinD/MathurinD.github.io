@@ -97,21 +97,22 @@ Resolution: transcript-level expression, single nucleotide variants
 
 ## Public datasets
 
-- [Genotype-Tissue Expression (GTEx)](https://gtexportal.org/home/downloads/adult-gtex/long_read_data): RNAseq from all major organs from a subset of individuals.
+- [Genotype-Tissue Expression (GTEx)](https://gtexportal.org/home/downloads/adult-gtex/long_read_data): Long-read RNAseq from all major organs from a subset of individuals.
 - [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/): Repository of sequencing data from publications
 - [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home): Repository of sequencing data from publications
 
 ## Pitfalls & Failure Modes
 
 - High molecular weight RNA (>1kb) is fragile and cannot be extracted like low molecular weight RNA. Harsh mechanical manipulations like forcing through porous medium or pipetting too harshly lead to strand breakage. The recommended method is [trizol extraction](https://nanoporetech.com/document/extraction-method/rna-human-cells) which is cheap but requires good cleaning of the RNA.
-- High molecular weight RNA in water is quite viscuous (not as bad as DNA though). Don't hesitate do add more buffer to enable manipulation or start with less cells. Always pipette very slowly to avoid breaking the strands. If your solution because less viscuous after pipetting up and down repeatedly it's likely than you broke the strands.
+- High molecular weight RNA in water is quite viscuous (not as bad as DNA though). Don't hesitate do add more buffer to enable manipulation or start with less cells. Always pipette very slowly to avoid breaking the strands. If your solution because less viscuous after pipetting up and down repeatedly it's likely than you broke the strands. See [ONT guide](https://nanoporetech.com/document/input-dna-rna-qc#assessing-input-rna) for more details.
 - Long read RNA sequencing methods relying on cDNA use polyA primers to generate the cDNA so will be exclusively composed of mRNA and lncRNA. If you are interested in other long RNAs (because if you are interested in short ones you should go for cheaper per read [short read sequencing](/posts/2025/09/short-read-sequencing)) use [polyA tailing](https://www.neb.com/en/protocols/2014/08/13/poly-a-tailing-of-rna-using-e-coli-poly-a-polymerase-neb-m0276), eventually after [ribo-depletion](https://www.neb.com/en/products/e6310-nebnext-rrna-depletion-kit-human-mouse-rat).
 
 ## Related publications
 
+- [PardoPalacios2024](https://www.nature.com/articles/s41592-024-02298-3): Systematic assessment of long-read RNA-seq methods for transcript identification and quantification
 - [Helal2024](https://www.nature.com/articles/s41598-024-56604-2): Benchmark of long-read aligners
-- [Sakamoto2019](https://www.nature.com/articles/s10038-019-0658-5): overview of the benefits of long-read sequencing for cancer genomics.
-- [Ebbert2019](https://link.springer.com/article/10.1186/s13059-019-1707-2): uncovering the "dark" genome with long-read sequencing.
+- [Sakamoto2019](https://www.nature.com/articles/s10038-019-0658-5): Overview of the benefits of long-read sequencing for cancer genomics
+- [Ebbert2019](https://link.springer.com/article/10.1186/s13059-019-1707-2): Uncovering the "dark" genome with long-read sequencing
 - [Glinos2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC10337767/) "Transcriptome variation in human tissues revealed by long-read sequencing"
 - [ONT transcriptome pipeline](https://github.com/nanoporetech/pipeline-transcriptome-de)
 - [Wang2024](https://www.nature.com/articles/s41467-024-51639-5): Customizing ONT base-calling to improve detection of modifications
@@ -132,12 +133,13 @@ Resolution: transcript-level expression, single nucleotide variants
 |RNAClean XP RNA and cDNA Cleanup Reagent, 40 mL|\\$1200|400|https://www.beckman.fr/reagents/genomic/cleanup-and-size-selection/rna-and-cdna/a63987|
 |Qubit™ RNA High Sensitivity (HS)|\\$500|500|https://www.thermofisher.com/order/catalog/product/Q32855|
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
+|High Sensitivity RNA ScreenTape Analysis|400|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-rna-screentape-reagents/high-sensitivity-rna-screentape-analysis-228267|
 |---------|--------|--------|
 |Total per xp|\\$315 (cDNA with multiplexing) - \\$1160 (direct RNA)|1||
 |---------|--------|--------|
 
 <!--
-nanopore = 250:1000 + 100 + 10 + 1 + 20 + 30 + 1
+nanopore = 250:1000 + 100 + 10 + 1 + 20 + 30 + 1 + 4
 |Random Primer Mix|||https://www.neb.com/en/products/s1330-random-primer-mix|
 https://www.pacb.com/revio/
 https://gcore.ucsd.edu/isoseq-pricing
@@ -145,7 +147,7 @@ for 20x WGS: |Revio SPRQ sequencing plate|\\$4000|4-8|https://www.pacb.com/produ
 pacbio = 250 + 140 + 200 + 1 + 0.2
 -->
 
-**Pacbio** starting from extracted RNA.
+**Pacific Bioscience** starting from extracted RNA.
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
@@ -154,6 +156,7 @@ pacbio = 250 + 140 + 200 + 1 + 0.2
 |Iso-Seq express 2.0 kit|\\$2400|12|https://www.pacb.com/products-and-services/consumables/application-kits/|
 |Qubit™ RNA High Sensitivity (HS)|\\$500|500|https://www.thermofisher.com/order/catalog/product/Q32855|
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
+|High Sensitivity RNA ScreenTape Analysis|400|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-rna-screentape-reagents/high-sensitivity-rna-screentape-analysis-228267|
 |---------|--------|--------|
 |Total per xp|\\$600 (with multiplexing) - \\$1900|1||
 |---------|--------|--------|
