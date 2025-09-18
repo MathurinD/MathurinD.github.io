@@ -89,8 +89,6 @@ Resolution: gene level mutation
 - High molecular weight DNA (20-50kb) is fragile and cannot be extracted like low molecular weight DNA. Harsh mechanical manipulations like forcing through porous medium or pipetting too harshly lead to strand breakage.
 TODO The recommended method is [trizol extraction](https://nanoporetech.com/document/extraction-method/rna-human-cells) which is cheap but requires good cleaning of the DNA.
 - High molecular weight DNA in water is very viscuous. Don't hesitate do add more buffer to enable manipulation or start with less cells. Always pipette very slowly to [avoid breaking the strands](https://www.qiagen.com/us/applications/molecular-biology-research/hmw-dna). If your solution because less viscuous after pipetting up and down repeatedly it's likely than you broke the strands.
-- Long read DNA sequencing methods relying on cDNA use polyA primers to generate the cDNA so will be exclusively composed of mDNA and lncDNA. If you are interested in other long DNAs (because if you are interested in short ones you should go for cheaper per read [short read sequencing](/posts/2025/09/short-read-sequencing)) use [polyA tailing](https://www.neb.com/en/protocols/2014/08/13/poly-a-tailing-of-rna-using-e-coli-poly-a-polymerase-neb-m0276), eventually after [ribo-depletion](https://www.neb.com/en/products/e6310-nebnext-rrna-depletion-kit-human-mouse-rat).
--
 
 ## Related publications
 
