@@ -17,7 +17,7 @@ Gene panels are curated sets of genes with known significance for a specific dis
 
 **Input** 100ng genomic DNA (~100k cells)
 
-**Output** Fastq file (20-100M PE reads) -> High depth sequence of the genes in the panel
+**Output** Fastq file (100k SE reads) -> High depth sequence of the genes in the panel
 
 ## Strategic Value
 
@@ -42,13 +42,13 @@ Gene panels are curated sets of genes with known significance for a specific dis
 
 ## Ops & Throughput
 
-**Turnaround**: 3+ days (day 1 extraction, day 2 library prep, day 3 or later sequencing 48-72h)
+**Turnaround**: 2 days (day 1 extraction, day 2 library prep + sequencing)
 
-**Hands-on time**: 4h
+**Hands-on time**: 2h30
 
 **Parallelizability**: High. All steps can be done in parallel for as many samples as needed.
 
-**Bottlenecks**: availability of sequencer (4-16 samples on Revio, 24 on ONT P24) Tapestation (16 lanes) and thermocycler (96 wells).
+**Bottlenecks**: Tapestation (16 lanes) and thermocycler (96 wells).
 
 **Batching**: 1 to 16 samples per technician.
 
@@ -56,7 +56,7 @@ Gene panels are curated sets of genes with known significance for a specific dis
 
 **Outsourceability**: Yes.
 
-**Data scale**: 20-100M reads/sample, ~60Gb/sample
+**Data scale**: 100k reads/sample, <1Gb/sample
 
 ## Data API
 Raw format: FASTQ (via [POD5](https://github.com/nanoporetech/pod5-file-format) for ONT)
@@ -65,25 +65,13 @@ Resolution: gene level mutation
 
 ## Analysis Ecosystem
 
-0. Basecalling (ONT) 
-    - [dorado](https://github.com/nanoporetech/dorado): Official base caller by ONT
-    - [remora](https://github.com/nanoporetech/remora)
 1. QC and cleaning
     - [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/): Quality control of the run
     - [cutadapt](https://cutadapt.readthedocs.io/en/stable/): Trimming of sequencing adapters from the reads
 2. Alignement:
+    - [bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
     - [minimap2](https://github.com/lh3/minimap2)
-    - [LRA](https://github.com/ChaissonLab/LRA)
-3. Gene expression quantification:
-    - [htseq-count](https://htseq.readthedocs.io/en/release_0.11.1/count.html): Gene-read overlap counts
-    - [salmon](https://combine-lab.github.io/salmon/): Quantification taking into account bias in the sequencing method
-4. Differential expression
-    - [DELongSeq](https://pmc.ncbi.nlm.nih.gov/articles/PMC9985341/) for isoform differential expression.
-    - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) or [PyDESeq2](https://pydeseq2.readthedocs.io/en/stable/)
-    - [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) or [edgePy](https://edgepy.readthedocs.io/en/latest/index.html)
-    - [Sleuth](https://pachterlab.github.io/sleuth_walkthroughs/trapnell/analysis.html)
-    <!-- - [glmgampoi](https://bioconductor.org/packages/release/bioc/html/glmGamPoi.html) -->
-5. Variant calling
+3. Variant calling
     - [Sniffles2](https://github.com/fritzsedlazeck/Sniffles)
     - [PAV](https://github.com/EichlerLab/pav)
     - [svim](https://github.com/eldariont/svim)
@@ -149,7 +137,7 @@ Monarch® HMW DNA Extraction Kit for Tissue|500|50|https://www.neb.com/en/produc
 
 - For small panels (<10 genes), you will get a faster turnout and cheaper costs with Sanger Sequencing (e.g \\$10/sample with [Eurofins](https://eurofinsgenomics.com/en/products/dna-sequencing/sanger-sequencing/))
 - Optimized panels are commercially available for many human genes involved in diseases (e.g [Ion AmpliSeq](https://www.thermofisher.com/fr/fr/home/life-science/sequencing/next-generation-sequencing/ion-torrent-next-generation-sequencing-workflow/ion-torrent-next-generation-sequencing-select-targets/ampliseq-target-selection/ion-ampliseq-on-demand-panels-targeted-sequencing.html))
-- There are two main ways to enrich a DNA sequence. "Amplification" uses PCR to specifically amplify the sequence of interest. "Capture" fragments the DNA an captures the fragments containing the sequence of interest with biotinylated oligos and streptavidin-coated beads and sequences the enriched fraction. Amplification is limited to about 30kb with long-range PCR while capture is in theory not limited in size. Capture also provides a bit more context around the target sequence.
+- There are [two main ways to enrich a DNA sequence](https://www.illumina.com/techniques/sequencing/dna-sequencing/targeted-resequencing/targeted-panels.html). "Amplification" uses PCR to specifically amplify the sequence of interest. "Capture" fragments the DNA an captures the fragments containing the sequence of interest with biotinylated oligos and streptavidin-coated beads and sequences the enriched fraction. Amplification is limited to about 30kb with long-range PCR while capture is in theory not limited in size. Capture also provides a bit more context around the target sequence.
 - [Whole Exome Sequencing](TODO) is a variation of capture-based panel sequencing with a panel consisting of >400k exonic sequences.
 - [Adaptive sampling](https://a.storyblok.com/f/196663/x/adc22701be/gs_1089-en-_v3_28feb2025_digital.pdf) is an amplification-free approach available on ONT sequencing platforms where only strands with features of interest are sequenced.
 
