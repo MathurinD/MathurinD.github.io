@@ -1,5 +1,5 @@
 <!-- https://jekyllrb.com/tutorials/csv-to-table/ -->
-<table>
+<table id="{{ include.name }}" class="display">
   {% for row in include.csv_file %}
     {% if forloop.first %}
     <thead>
@@ -30,3 +30,10 @@
     {% endfor %}
 </table>
 
+{% if include.name %}
+<script>
+$(document).ready( function () {
+    new DataTable('#{{ include.name }}');
+} );
+</script>
+{% endif %}

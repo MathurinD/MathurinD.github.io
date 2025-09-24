@@ -12,8 +12,7 @@ Here are different scenarios for experiments relying on sequencing. We will sepa
 Time represents the time to prepare the samples for sequencing, usually add 24h-48h for the sequencing run. If you have to generate the samples, count one to three weeks for cell culture.
 
 <!-- Cost, time (hands-on and total) -->
-
-{% include csv_table.html csv_file=site.data.sequencing_scenarios %}
+{% include csv_table.html csv_file=site.data.sequencing_scenarios name="sequencing_scenarios" %}
 
 This page references manufacturer prices (in 2025 euros, see [genohub](https://genohub.com/high-throughput-sequencers/) for dollar costs). If you have access to a sequencing core facility (university or company) that has the appropriate device you can get those prices or cheaper depending on what was negotiated with the supplier (or note [NCSU](https://research.ncsu.edu/gsl/pricing/#nextgen), [Feinberg School of Medicine](https://www.cgm.northwestern.edu/cores/nuseq/pricing.html#price-link1) or [NCI](https://crtp.ccr.cancer.gov/sf/pricing/)). If you have to go through a third party (Eurofins, CeGaT, etc) plan to pay about double the amount but they should have the latest sequencers available.<br/>
 Kits from each manufacturers exist in different sizes, bigger is always cheaper per read/Gb but if you cannot fill it the flowcells are more expensive.
@@ -24,6 +23,6 @@ Prices are given normalised per read and per Gb for different usages:
 For single cell perturbation screening aficionados like me, sequencing 1M single cells at 50k reads/cell (50B reads total) is best done with 2 Novaseq X flowcell 300 cycles for a bit under 33k€.
 For the full price of the experiment, add the biological sample preparation cost (cell culture or patient conservation) and the library preparation cost (DNA/RNA extraction and barcoding).
 
-{% include csv_table.html csv_file=site.data.singlecell_costs %}
+{% include csv_table.html csv_file=site.data.singlecell_costs name="singlecell_costs" %}
 
-{% include csv_table.html csv_file=site.data.sequencing_costs %}
+{% include csv_table.html csv_file=site.data.sequencing_costs name="sequencing_costs" %}
