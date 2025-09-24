@@ -1,7 +1,10 @@
-Scenario,Experiment and library prep kits,Xp kits cost per sample,Reads to order,Gb to order,Sequencing cost ($),Total Cost,Hands-on time (h),Total time (h)
-RiboZero RNAseq (100M reads/sample),NEB total RNA + NEBNext rRNA depletion + NEBNext Directional RNA library,87,100M PE,30,90,106,3,7
-scRNAseq (20k cells 50k reads/cell),10X Genomics GEM-X Universal 3' Gene Expression,1750,1B,300,900,2650,6,72
-Whole human genome CRISPR screen,Cell culture reagents + gDNA extraction kit + PCR Master mix,,30M SE,3,9,1000,11-46,36-506
+Scenario,Experiment and library prep kits,Xp kits cost per sample,Reads to order,Gb to order,Sequencing cost ($),Total Cost,Hands-on time,Total time
+RiboZero RNAseq (100M reads/sample),NEB total RNA + NEBNext rRNA depletion + NEBNext Directional RNA library,87,100M PE,30,90,106,3h,7h
+ONT polyA RNAseq (5M reads/sample),ONT cDNA-PCR sequencing kit,160,5M,60,250,400,5h,53h-75h
+ONT direct RNAseq (20M reads/sample),ONT Direct RNA sequencing kit,160,20M,240,1000,1160,5h,53h-75h
+Pacbio RNAseq (10M reads/sample),Kinnex full-length RNA kit + Iso-seq express 2.0 kit + Revio SPRQ,170,10M,20,100,270,5h,30h
+scRNAseq (20k cells 50k reads/cell),10X Genomics GEM-X Universal 3' Gene Expression,1750,1B,300,900,2650,6h,72h
+Whole human genome CRISPR screen,Cell culture reagents + gDNA extraction kit + PCR Master mix,,30M SE,3,9,1000,11h-46h,36h-21d
 ATAC-seq,,,,,,,,
 scRNAseq (100k cells 100k reads/cell),,,,,,,,
 Targeted CRISPR screen (2000 sgRNA),,,,,,,,

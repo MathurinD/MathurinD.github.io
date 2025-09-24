@@ -33,11 +33,11 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 ## Cost & Scale
 
-- Variable per run: **\\$600/sample** \\$315 (cDNA) - \\$1160 (direct RNA)
+- Variable per run: **\\$400/sample** \\$270 (cDNA) - \\$1160 (direct RNA)
 - Cost breakdown:
     + RNA extraction: \\$56
     + Long-read library preparation: \\$50 - \\$150
-    + Sequencing (5M reads, 60Gb): \\$
+    + Sequencing (5M reads, 60Gb): \\$100 - \\$1000
 - Capex: Thermocycler (\\$10-20k), TapeStation (\\$6-30k), ONT PromethION sequencer (\\$50-500k) or PacBio sequencer (\\$250k-600k)
 
 ## Experimental Modules
@@ -54,7 +54,7 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 **Parallelizability**: High. All steps can be done in parallel for as many samples as needed.
 
-**Bottlenecks**: availability of sequencer (4-16 samples on Revio, 24 on ONT P24) Tapestation (16 lanes) and thermocycler (96 wells).
+**Bottlenecks**: availability of sequencer (4-40 samples/24h on Revio, 2-8/72h on ONT P2, 24-100/72h on ONT P24,) Tapestation (16 lanes/h) and thermocycler (96 wells/3h).
 
 **Batching**: 1 to 16 samples per technician.
 
@@ -62,7 +62,7 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 **Outsourceability**: Yes.
 
-**Data scale**: 20-100M reads/sample, ~60Gb/sample
+**Data scale**: 5-10M reads/sample, 30-60Gb/sample
 
 ## Data API
 Raw format: FASTQ (via [POD5](https://github.com/nanoporetech/pod5-file-format) for ONT)
@@ -116,6 +116,7 @@ Resolution: transcript-level expression, single nucleotide variants
 - [Glinos2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC10337767/) "Transcriptome variation in human tissues revealed by long-read sequencing"
 - [ONT transcriptome pipeline](https://github.com/nanoporetech/pipeline-transcriptome-de)
 - [Wang2024](https://www.nature.com/articles/s41467-024-51639-5): Customizing ONT base-calling to improve detection of modifications
+- [AlKhafaji2023](https://www.nature.com/articles/s41587-023-01815-7): Explains the MAS-ISO-seq method used in [PacBio Kinnex kits](https://www.pacb.com/wp-content/uploads/Application-note-Kinnex-full-length-RNA-kit-for-isoform-sequencing.pdf)
 
 ## Order list
 
@@ -123,7 +124,7 @@ Resolution: transcript-level expression, single nucleotide variants
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
-|PromethION Flow Cell Packs|\\$4000|4-16|https://store.nanoporetech.com/eu/promethion-flow-cell-packs-r10-4-1-m-version-2025.html|
+|Pack 4xPromethION Flow Cell|\\$4000|4-16|https://store.nanoporetech.com/eu/promethion-flow-cell-packs-r10-4-1-m-version-2025.html|
 |(multiplexing) cDNA-PCR Barcoding Kit V14|750|144|https://store.nanoporetech.com/eu/cdna-pcr-barcoding-kit-v14.html|
 |(direct RNA) Direct RNA Sequencing Kit|\\$600|6|https://store.nanoporetech.com/eu/direct-rna-sequencing-kit-004.html|
 |Induro® Reverse Transcriptase and 5x Induro® RT Reaction Buffer (NEB, M0681)|\\$200|20|https://www.neb.com/en-us/products/m0681-induro-reverse-transcriptase|
@@ -135,31 +136,34 @@ Resolution: transcript-level expression, single nucleotide variants
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
 |High Sensitivity RNA ScreenTape Analysis|400|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-rna-screentape-reagents/high-sensitivity-rna-screentape-analysis-228267|
 |---------|--------|--------|
-|Total per xp|\\$315 (cDNA with multiplexing) - \\$1160 (direct RNA)|1||
+|Total per xp|\\$400 (cDNA with multiplexing) - \\$1160 (direct RNA)|1||
 |---------|--------|--------|
 
 <!--
 nanopore = 250:1000 + 100 + 10 + 1 + 20 + 30 + 1 + 4
 |Random Primer Mix|||https://www.neb.com/en/products/s1330-random-primer-mix|
-https://www.pacb.com/revio/
-https://gcore.ucsd.edu/isoseq-pricing
-for 20x WGS: |Revio SPRQ sequencing plate|\\$4000|4-8|https://www.pacb.com/products-and-services/consumables/hifi-sequencing-kits/|
-pacbio = 250 + 140 + 200 + 1 + 0.2
 -->
 
 **Pacific Bioscience** starting from extracted RNA.
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
-|Revio SPRQ sequencing plate|\\$4000|4|https://www.pacb.com/products-and-services/consumables/hifi-sequencing-kits/|
-|Kinnex full-length RNA kit|\\$700|1-4|https://www.pacb.com/products-and-services/consumables/application-kits/|
-|Iso-Seq express 2.0 kit|\\$2400|12|https://www.pacb.com/products-and-services/consumables/application-kits/|
+|Revio SPRQ sequencing plate|\\$4000|4-40|https://www.pacb.com/products-and-services/consumables/hifi-sequencing-kits/|
+|Kinnex full-length RNA kit|\\$700|12|https://www.pacb.com/products-and-services/consumables/application-kits/|
+|Iso-Seq express 2.0 kit|\\$2400|24|https://www.pacb.com/products-and-services/consumables/application-kits/|
 |Qubit™ RNA High Sensitivity (HS)|\\$500|500|https://www.thermofisher.com/order/catalog/product/Q32855|
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
 |High Sensitivity RNA ScreenTape Analysis|400|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-rna-screentape-reagents/high-sensitivity-rna-screentape-analysis-228267|
 |---------|--------|--------|
-|Total per xp|\\$600 (with multiplexing) - \\$1900|1||
+|Total per xp|\\$270 (with multiplexing) - \\$1170|1||
 |---------|--------|--------|
+<!--
+100:1000 + 58 + 100 + 1 + 5 + 4
+Max multiplexing = Iso-seq 12 barcodes x kinnex 4 barcodes, but we want max 10-12 multiplex to get 5M reads(30Gb)/sample
+https://www.pacb.com/wp-content/uploads/Revio-brochure.pdf
+https://gcore.ucsd.edu/isoseq-pricing
+for 20x WGS: |Revio SPRQ sequencing plate|\\$4000|4-8|https://www.pacb.com/products-and-services/consumables/hifi-sequencing-kits/|
+-->
 
 ## Protocol variations
 
