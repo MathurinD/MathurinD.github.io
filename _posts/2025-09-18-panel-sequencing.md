@@ -107,22 +107,22 @@ Whenever you can try to sequence panels on runs with more high throughput sample
 |PCR-Core-Kit with Taq-DNA-Polymerase|400|200|https://www.sigmaaldrich.com/DE/de/product/sigma/coret|
 |Genomic DNA ScreenTape Analysis|\\$450|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-dna-screentape-reagents/genomic-dna-screentape-analysis-228261|
 |Sequencing 1000x on Miseq i100 (100k reads, <0.03Gb)|\\$530|10-50|<\\$1 if done with other sample on large sequencer|
-|---------|--------|--------|
 |Total per xp|\\$58-\\$111|1||
 |---------|--------|--------|
 
 **Oxford nanopore** for long amplicon panels. We assume 20x multiplexing.
 
 |Item|Cost|Number of experiments|Link|
+|---------|--------|--------|
 |MagAttract HMW DNA Kit|480|48|https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/magattract-hmw-dna-kit-48|
-|PCR primers panel (2x20bp+sequencing adapters, 100 targets, 100nmol)|5000|100|https://eu.idtdna.com/pages/products/qpcr-and-pcr/custom-primers/rxnready-primer-pools|
+|PCR primers panel (2x20bp, 100 targets, 100nmol)|2500|100|https://eu.idtdna.com/pages/products/qpcr-and-pcr/custom-primers/rxnready-primer-pools|
 |PCR-Core-Kit with Taq-DNA-Polymerase|400|200|https://www.sigmaaldrich.com/DE/de/product/sigma/coret|
 |Genomic DNA ScreenTape Analysis|\\$450|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-dna-screentape-reagents/genomic-dna-screentape-analysis-228261|
 |Qubit™ RNA High Sensitivity (HS)|\\$500|500|https://www.thermofisher.com/order/catalog/product/Q32855|
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
 |ONT Native barcoding kit|\\$695|6|https://store.nanoporetech.com/eu/native-barcoding-kit-24-v14.html|
 |MinION & GridION Flow Cell (R10.4.1)|\\$700|20|https://store.nanoporetech.com/eu/flow-cell-r10-4-1-ely.html|
-|Total per xp|\\$185|1||
+|Total per xp|\\$160|1||
 
 <!--
 Monarch® HMW DNA Extraction Kit for Tissue|500|50|https://www.neb.com/en/products/t3060-monarch-hmw-dna-extraction-kit-for-tissue|
