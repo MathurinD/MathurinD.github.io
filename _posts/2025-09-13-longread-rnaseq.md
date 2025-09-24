@@ -1,7 +1,7 @@
 ---
 title: 'Cost of long read RNA sequencing'
 date: 2025-09-13
-permalink: /posts/2025/09/long-read-sequencing/
+permalink: /posts/2025/09/long-read-rnaseq/
 tags:
   - Experiment Costs
   - RNAseq

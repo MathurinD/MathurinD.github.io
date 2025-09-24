@@ -16,12 +16,13 @@ For my PhD thesis I modelled the MAPK and PI3K pathways in neuroblastoma to sugg
 
 When not doing science, I am a decent Rock 4 temps and Batchata dancer, and an adept of <a href="hiking">long hikes</a>.
 
-I like designing complex experiments and I made a series of posts to help non-biologist get an idea of the cost of biology experiments:
+I like designing complex experiments and made a series of posts in collaboration with Félix Raimundo and others to help non-biologist get an idea of the cost of standard biology experiments:
 1. [Mammalian cell culture](posts/2025/09/single_ko_generation/)
 1bis. [Knock-out cell line generation](posts/2025/09/single_ko_generation/)
-2. [RNAseq](posts/2025/09/short-read-sequencing/)
-2bis. [Long read sequencing](posts/2025/09/long-read-sequencing/)
-3. [Whole Genome Sequencing](posts/2025/09/whole-genome-sequencing)
+2. [RNAseq](posts/2025/09/short-read-rnaseq/)
+2bis. [Long read RNA sequencing](posts/2025/09/long-read-rnaseq/)
+3. [Whole Genome Sequencing (WGS)](posts/2025/09/whole-genome-sequencing)
+3bis. [Long read WGS](posts/2025/09/long-read-genome-sequencing/)
 10. [CRISPR screen](posts/2025/09/crispr_ko_screens/)
 
 <!--
