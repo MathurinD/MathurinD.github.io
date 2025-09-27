@@ -135,29 +135,29 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
 |SMART-Seq® Single Cell Kit|\\$4400|48|https://www.takarabio.com/products/next-generation-sequencing/rna-seq/legacy-rna-seq-kits/smart-seq-single-cell-for-scrna-seq)|
-|10M 2x150 reads (200k/cell) with NextSeq2000 XBS P1 or Aviti Low Output flowcell|\\$100|1||
-|Total per xp|\\$190|1|96 cells|
-|Cost per cell|\\$2|||
+|10M 2x150 reads (200k/cell) with NextSeq2000 XBS P1 or Aviti Low Output flowcell|\\$100|1|https://www.elementbiosciences.com/products/aviti/specs|
+|**Total per xp**|\\$190|1|96 cells|
+|**Cost per cell**|\\$2|||
 
 **Droplet-based barcoding**: 100 - 100k cells ([10x genomics](https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form))
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
-|GEM-X Universal 3' Gene Expression v4, 16 samples|\\$24500|16||https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
-|Chromium GEM-X Single Cell 3' Chip Kit v4, 4 chips|\\$1400|32||https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
-|Dual Index Kit TT Set A, 96 rxn|\\$1100|96||https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
+|GEM-X Universal 3' Gene Expression v4, 16 samples|\\$24500|16|https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
+|Chromium GEM-X Single Cell 3' Chip Kit v4, 4 chips|\\$1400|32|https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
+|Dual Index Kit TT Set A, 96 rxn|\\$1100|96|https://www.10xgenomics.com/store/experiment-builder?assay=ThreePrime&version=V40&step=form
 |500M 2x150 reads (25k/cell) on Aviti Medium Output|\\$1100|1|https://www.elementbiosciences.com/products/aviti/specs|
-|Total per xp|\\$2700|1|20k cells|
-|Cost per cell|\\$0.14|||
+|**Total per xp**|\\$2700|1|20k cells|
+|**Cost per cell**|\\$0.14|||
 
 **Split-pool barcoding**: 100k - 10M cells ([Parse Bioscience](https://www.parsebiosciences.com/) or [Scale Bioscience](https://scale.bio/))
 
 |Item|Cost|Number of experiments|Link|
+|---------|--------|--------|
 |Parse Bioscience Evercode WT v3|\\$10000|1|https://www.parsebiosciences.com/products/evercode-wt/|
 |25B 2x150 reads (25k/cell) on NovaseqX 25B or MGI T20|\\$16500|1|https://emea.illumina.com/products/by-type/sequencing-kits/cluster-gen-sequencing-reagents/novaseq-x-series-reagent-kits.html#tabs-80eb4f32eb-item-f8cd845d52-order|
-|---------|--------|--------|
-|Total per xp|\\$26500|1|1M cells|
-|Cost per cell|\\$0.03|||
+|**Total per xp**|\\$26500|1|1M cells|
+|**Cost per cell**|\\$0.03|||
 
 ## Protocol variations
 
