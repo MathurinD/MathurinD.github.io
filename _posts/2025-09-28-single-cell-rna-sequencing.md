@@ -1,7 +1,7 @@
 ---
 title: 'Cost of single cell RNA sequencing'
 date: 2025-09-28
-permalink: /posts/2025/09/single-cell-rana-sequencing/
+permalink: /posts/2025/09/single-cell-rna-sequencing/
 tags:
   - Experiment Costs
   - Single-cell
@@ -17,12 +17,12 @@ Long-read RNA sequencing enables the identification and quantification of RNA ex
 
 **Input** 100-10M cells
 
-**Output** Fastq file (5M- PE reads) -> Gene expression
+**Output** Fastq file (100M-25B PE reads) -> Single cell gene expression
 
 ## Strategic Value
 
-- Characterise cell type and cell state in a complex sample
-- Massive parallel perturbation with CROPseq or PerturbSeq
+- Characterise cell type and cell state in a complex sample (developing embryo, tumor sample or simply a healthy tissue).
+- Massive parallel perturbation with CROPseq, PerturbSeq or pooled cell culture.
 
 <!--
 By comparing multiple samples, we know the effect of perturbations (drug, disease, [knock-out](/2025-09-02-single-ko.md), etc) on the transcriptome of the cell. This can be used to understand gene regulation, how a drug works, or which processes a disease affects.
@@ -33,11 +33,11 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 ## Cost & Scale
 
-- Variable per run: **\\$2700 for 20k cells** \\$190 (96 cells) - \\$36500 (1M cells)
+- Variable per run: **\\$2700 for 20k cells**, \\$190 (96 cells) - \\$36,500 (1M cells)
 - Cost breakdown:
-    + Cell barcoding of RNA: \\$100 (96 cells) - \\$10k (1M cells)
-    + Sequencing: \\$100 (10M, 1Gb) - \\$16500 (25B reads, 7.5Tb)
-- Capex: [Magnetic Stand 96](https://www.thermofisher.com/order/catalog/product/AM10027) (\\$800), Thermocycler (\\$10-20k), TapeStation (\\$6-30k), [Chromium Controller](https://www.10xgenomics.com/instruments/chromium-controller) (\\$10k, for 10x Genomics only), Illumina NovaseqX or MGI T20 (\\$1M)
+    + Cell barcoding of RNA: \\$90 (96 cells) - \\$10k (1M cells)
+    + Sequencing: \\$100 (10M, 1Gb) - \\$16,500 (25B reads, 7.5Tb)
+- Capex: [Magnetic Stand 96](https://www.thermofisher.com/order/catalog/product/AM10027) (\\$800), Thermocycler (\\$10-20k), TapeStation (\\$6-30k), [Chromium Controller](https://www.10xgenomics.com/instruments/chromium-controller) (\\$20k, needed for 10x Genomics only), Illumina NovaseqX or MGI T20 (\\$1M)
 
 ## Experimental Modules
 
@@ -59,13 +59,16 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 **Automation readiness**: Partial. Custom solution via automation specialists for [Parse Bioscience](https://www.parsebiosciences.com/single-cell-automation/) and [Scale Bioscience](https://6586853.fs1.hubspotusercontent-na1.net/hubfs/6586853/SPT%20Labtech%20Website/09%20-%20Resources/SPT%20Labtech%20Scale%20Biosciences%20Automating%20ScaleBio%20Single%20Cell%20RNA%20Kit%20on%20firefly.pdf). Partially released [Chromium Connect](https://www.10xgenomics.com/support/instruments/chromium-connect/chromium-connect-software-release-note) by 10x Genomics. Worth mentionning is the [Cellen One X1 Neo](https://www.cellenion.com/lp/cellenone/) which can easily be adapted for SmartSeq2 automation.
 
-**Outsourceability**: Yes.
+**Outsourceability**: Yes, [most CROs](https://www.google.com/search?q=single+cell+sequencing+cro) offer it.
 
-**Data scale**: 5-10M reads/sample, 30-60Gb/sample
+**Data scale**: 100M-25B reads/sample, 1Gb-7.5Tb/sample
 
 ## Data API
+
 Raw format: FASTQ
+
 Processed format: sparse count matrix -> cell type (with [RNA velocity](https://www.nature.com/articles/s41587-020-0591-3) if relevant)
+
 Resolution: 3'-biased polyA gene products expression for individual cells
 
 ## Analysis Ecosystem
@@ -82,7 +85,7 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 3. Count processing and cell clustering
     - [scanpy](https://scanpy.readthedocs.io/en/stable/) in python, faster and better suited for large dataset (>100k)
     - [Seurat](https://satijalab.org/seurat/) in R
-5. Cell type annotation (many tools exist, including fundation models)
+5. Cell type annotation (many tools exist, including foundation models)
     - [ScType](https://sctype.app/): Marker based annotation
     - Single cell foundation models such as [scBERT](https://www.nature.com/articles/s42256-022-00534-z), [Geneformer](https://www.nature.com/articles/s41586-023-06139-9), [scGPT](https://www.nature.com/articles/s41592-024-02201-0), [CellFM](https://www.nature.com/articles/s41467-025-59926-5), or [xTrimoscFoundation](https://www.nature.com/articles/s41592-024-02305-7). 
 4. Differential expression
@@ -112,9 +115,9 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 
 ## Related publications
 
-- [SmartSeq2](https://www.nature.com/articles/nprot.2014.006) original paper
-- [Rosenberg2018](https://www.science.org/doi/10.1126/science.aam8999): Single-cell profiling of the developing mouse brain and spinal cord with split-pool barcoding (Parse Bioscience fundational paper)
-- [Zheng2017](https://www.nature.com/articles/ncomms14049): Massively parallel digital transcriptional profiling of single cells (10x genomics fundational paper)
+- [Picelli2014](https://www.nature.com/articles/nprot.2014.006): SmartSeq2 foundational paper
+- [Rosenberg2018](https://www.science.org/doi/10.1126/science.aam8999): Single-cell profiling of the developing mouse brain and spinal cord with split-pool barcoding (Parse Bioscience foundational paper)
+- [Zheng2017](https://www.nature.com/articles/ncomms14049): Massively parallel digital transcriptional profiling of single cells (10x genomics foundational paper)
 - [Gaisser2024](https://www.nature.com/articles/s41596-024-01007-w): High-throughput single-cell transcriptomics of bacteria using combinatorial barcoding
 - [Pan2024](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03246-2): Single Cell Atlas: a single-cell multi-omics human cell encyclopedia
 - [Heimberg2024](https://www.nature.com/articles/s41586-024-08411-y): A cell atlas foundation model for scalable search of similar human cells
