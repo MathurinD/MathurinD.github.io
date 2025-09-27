@@ -60,7 +60,9 @@ Gene panels are curated sets of genes with known significance for a specific dis
 
 ## Data API
 Raw format: FASTQ (via [POD5](https://github.com/nanoporetech/pod5-file-format) for ONT)
+
 Processed format: Variant Call Format (VCF)
+
 Resolution: gene level mutation
 
 ## Analysis Ecosystem

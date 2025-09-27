@@ -69,7 +69,9 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 ## Data API
 Raw format: FASTQ (via [POD5](https://github.com/nanoporetech/pod5-file-format) for ONT)
+
 Processed format: count matrix
+
 Resolution: transcript-level expression, single nucleotide variants
 
 ## Analysis Ecosystem
