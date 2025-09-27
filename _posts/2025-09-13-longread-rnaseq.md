@@ -20,12 +20,15 @@ Long-read DNA sequencing enables the identification of the genomic sequence for 
 
 **Input** 300ng polyA+ RNA or 1ug total RNA (~300k cells)
 
-**Output** Fastq file (20-100M PE reads) -> Gene expression
+**Output** Fastq file (5-10M full length transcripts, 60-120Gb) -> Transcript expression
 
 ## Strategic Value
 
+- Whole transcriptome for differential expression analysis. By comparing multiple samples, we know the effect of perturbations (drug, disease, [knock-out](/2025-09-02-single-ko.md), etc) on the transcriptome of the cell. This can be used to understand gene regulation, how a drug works, or which processes a disease affects.
+- Full length transcript for perfect isoform resolution and splicing events determination
+- (direct RNA sequencing only) polyA tail and RNA modifications
+
 <!--
-By comparing multiple samples, we know the effect of perturbations (drug, disease, [knock-out](/2025-09-02-single-ko.md), etc) on the transcriptome of the cell. This can be used to understand gene regulation, how a drug works, or which processes a disease affects.
 
 RNAseq provides the sequence of all expressed genes, meaning variants (e.g. SNPs, gene fusions) can be called but coverage will be biased towards highly expressed genes.
 In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutations can be detected for most genes.
@@ -33,7 +36,7 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 ## Cost & Scale
 
-- Variable per run: **\\$400/sample** \\$270 (cDNA) - \\$1160 (direct RNA)
+- Variable per run: **\\$250/sample** \\$150 (cDNA) - \\$1160 (direct RNA)
 - Cost breakdown:
     + RNA extraction: \\$56
     + Long-read library preparation: \\$50 - \\$150
@@ -120,11 +123,11 @@ Resolution: transcript-level expression, single nucleotide variants
 
 ## Order list
 
-**Oxford nanopore** starting from extracted RNA.
+**Oxford nanopore** starting from extracted RNA (50-80m reads/flowcell with cDNA, 20-30m reads per flowcell with direct RNA).
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
-|Pack 4xPromethION Flow Cell|\\$4000|4-16|https://store.nanoporetech.com/eu/promethion-flow-cell-packs-r10-4-1-m-version-2025.html|
+|Pack 4xPromethION Flow Cell|\\$4000|4-40|https://store.nanoporetech.com/eu/promethion-flow-cell-packs-r10-4-1-m-version-2025.html|
 |(multiplexing) cDNA-PCR Barcoding Kit V14|750|144|https://store.nanoporetech.com/eu/cdna-pcr-barcoding-kit-v14.html|
 |(direct RNA) Direct RNA Sequencing Kit|\\$600|6|https://store.nanoporetech.com/eu/direct-rna-sequencing-kit-004.html|
 |Induro® Reverse Transcriptase and 5x Induro® RT Reaction Buffer (NEB, M0681)|\\$200|20|https://www.neb.com/en-us/products/m0681-induro-reverse-transcriptase|
@@ -136,15 +139,15 @@ Resolution: transcript-level expression, single nucleotide variants
 |Qubit™ Assay Tubes|\\$100|500|https://www.thermofisher.com/order/catalog/product/Q32856|
 |High Sensitivity RNA ScreenTape Analysis|400|100|https://www.agilent.com/en/product/automated-electrophoresis/tapestation-systems/tapestation-rna-screentape-reagents/high-sensitivity-rna-screentape-analysis-228267|
 |---------|--------|--------|
-|Total per xp|\\$400 (cDNA with multiplexing) - \\$1160 (direct RNA)|1||
+|Total per xp|\\$150 (cDNA with multiplexing) - \\$1160 (direct RNA)|1||
 |---------|--------|--------|
 
 <!--
-nanopore = 250:1000 + 100 + 10 + 1 + 20 + 30 + 1 + 4
+nanopore = 100:1000 + 5:100 + 10 + 1 + 20 + 30 + 1 + 4
 |Random Primer Mix|||https://www.neb.com/en/products/s1330-random-primer-mix|
 -->
 
-**Pacific Bioscience** starting from extracted RNA.
+**Pacific Bioscience** starting from extracted RNA (60-80m reads per flowcell).
 
 |Item|Cost|Number of experiments|Link|
 |---------|--------|--------|
