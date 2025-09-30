@@ -13,16 +13,16 @@ excerpt: ''
 
 ## Why do you do this experiment?
 
-Long-read RNA sequencing enables the identification and quantification of RNA expressed in a cell or a sample (the transcriptome) at the isoform resolution.
+Single cell RNA sequencing measures the expression of gene transcripts in individual cells.
 
 **Input** 100-10M cells
 
-**Output** Fastq file (100M-25B PE reads) -> Single cell gene expression
+**Output** Fastq file (100M-250B PE reads) -> Single cell gene expression
 
 ## Strategic Value
 
-- Characterise cell type and cell state in a complex sample (developing embryo, tumor sample or simply a healthy tissue).
-- Massive parallel perturbation with CROPseq, PerturbSeq or pooled cell culture.
+- Characterise cell type and cell state in a complex sample (developing embryo, tumor sample or simply a healthy tissue) and their individual response to perturbations.
+- Measure the response of cells to many parallel perturbations in parallel with CROPseq, PerturbSeq or pooled cell culture.
 
 <!--
 By comparing multiple samples, we know the effect of perturbations (drug, disease, [knock-out](/2025-09-02-single-ko.md), etc) on the transcriptome of the cell. This can be used to understand gene regulation, how a drug works, or which processes a disease affects.
@@ -37,7 +37,7 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 - Cost breakdown:
     + Cell barcoding of RNA: \\$90 (96 cells) - \\$10k (1M cells)
     + Sequencing: \\$100 (10M, 1Gb) - \\$16,500 (25B reads, 7.5Tb)
-- Capex: [Magnetic Stand 96](https://www.thermofisher.com/order/catalog/product/AM10027) (\\$800), Thermocycler (\\$10-20k), TapeStation (\\$6-30k), [Chromium Controller](https://www.10xgenomics.com/instruments/chromium-controller) (\\$20k, needed for 10x Genomics only), Illumina NovaseqX or MGI T20 (\\$1M)
+- Capex: [Magnetic Stand 96](https://www.thermofisher.com/order/catalog/product/AM10027) (\\$800), Thermocycler (\\$10-20k), TapeStation (\\$6-30k), [Chromium Controller](https://www.10xgenomics.com/instruments/chromium-controller) (\\$20k, needed for 10x Genomics only), Illumina NovaseqX, MGI T20 or UltimaGenomics UG100 (\\$800k-1M)
 
 ## Experimental Modules
 
@@ -67,7 +67,7 @@ In the context of cancer and with deep enough RNAseq, sub-clonal exonic mutation
 
 Raw format: FASTQ
 
-Processed format: sparse count matrix -> cell type (with [RNA velocity](https://www.nature.com/articles/s41587-020-0591-3) if relevant)
+Processed format: sparse single cell expression count matrix -> cell type (with [RNA velocity](https://www.nature.com/articles/s41587-020-0591-3) if relevant)
 
 Resolution: 3'-biased polyA gene products expression for individual cells
 
@@ -165,14 +165,10 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 <!-- compressed CROPseq https://www.nature.com/articles/s41587-023-01964-9 -->
 - Single cell RNAseq with long read sequencing. This usually simply requires a longer RT step to produce a full cDNA copy of the transcript, skipping cDNA fragmentation and using a long read technology.
 - Demultiplexing via SNPs with [Souporcell](https://www.nature.com/articles/s41592-020-0820-1) enables the multiplexing or an arbitrary number of samples of different genetic origin (patient or cell line).
-<!--
-- Single cell methylation can be obtained with bisulfite transformation of the barcoded DNA.
--->
 
 ## Bonus: Main metrics for common kits
 
 {% include csv_table.html csv_file=site.data.singlecell_costs name="singlecell_costs" %}
-
 
 {% include costs_disclaimer.html %}
 
