@@ -76,7 +76,7 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 1. QC and cleaning
     - [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/): Quality control of the run
     - [cutadapt](https://cutadapt.readthedocs.io/en/stable/): Trimming of sequencing adapters from the reads
-2. Alignement and cell barcode attribution pipelines (most use STAR under the hood):
+2. Read deduplication via UMI, alignement and cell barcode attribution pipelines (most use STAR under the hood):
     - [CellRanger](https://www.10xgenomics.com/support/software/cell-ranger/latest) for 10x Genomics
     - [splitpipe](https://support.parsebiosciences.com/hc/en-us/articles/36214328983828-Guided-walkthrough-Pipeline-module-set-up) for Parse Bioscience
     - [smartseq2 pipeline](https://github.com/nf-core/smartseq2)
@@ -112,6 +112,8 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 - Ambient RNA contamination is a prime noise factor in single cell RNA-seq. Ambiant RNA is release by dead cells when they loose membrane integrity and can be barcoded with cells barcode. This problem is most present with encapsulation methods such as 10x or 
 - Most protocols rely on polyA oligos to barcode the RNAs, leading to only mRNA and lncRNA being captured. Parse Bioscience Evercode takes an intermediate route with a [mix of polyA and random hexamers](https://www.parsebiosciences.com/blog/getting-started-with-scrna-seq-library-preparation-qc-and-sequencing/) and 10x offers [capture sequence](https://www.nature.com/articles/nprot.2014.006) on their beads. If you are interested mainly in non-polyA transcripts at the single cell resolution, there are protocols but they are usually lower throughput.
 - polyA capture followed by fragmentation induces a 3' bias, limiting the resolution to the gene level. SmartSeq2 notably uses tagmentation to insert barcodes, providing reads covering the full length of the transcript. A protocol variation with 10x to perform long read sequencing strongly decreases the 3' bias for short transcripts (<10kb) but requires using long read sequencing technologies. Takara also provides a [long read variation of SmartSeq](https://www.takarabio.com/products/next-generation-sequencing/rna-seq/mrna-seq/long-read-mrna-seq).
+- We have given both R and Python options, but note that the field is moving towards python, which you should chose chose unless your team is extremely unfamiliar with it and extremely familiar with R. Large single cell dataset can take a long time to process a python is faster and more memory efficient. Also don't hesitate to subsample your cells for your analysis, you don't need to compute on all the cells all the time, especially if you are interested in particular subsets or if one cell type represents a large proportion of your sample.
+- UMI (Unique Molecular Identifier) are added to the transcripts during cell barcoding. They enable for the correction of PCR artifacts and to plot saturation curves (how often you sequence the same read) to estimate how much of the complexity of your sample you capture. See a more detailed discussion of UMI uses and limitations by [Jianfeng Sun](https://substack.com/inbox/post/166754641).
 
 ## Related publications
 
@@ -165,6 +167,7 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 <!-- compressed CROPseq https://www.nature.com/articles/s41587-023-01964-9 -->
 - Single cell RNAseq with long read sequencing. This usually simply requires a longer RT step to produce a full cDNA copy of the transcript, skipping cDNA fragmentation and using a long read technology.
 - Demultiplexing via SNPs with [Souporcell](https://www.nature.com/articles/s41592-020-0820-1) enables the multiplexing or an arbitrary number of samples of different genetic origin (patient or cell line).
+- [Single *nuclei* RNAseq](https://www.scdiscoveries.com/blog/single-nucleus-rna-sequencing-advantages-and-drawbacks/) (snRNAseq) is a variant of scRNAseq where the cytoplasms are stripped from the cells and only the nuclei are fixed and sequenced. Nuclei have the advantage of being more robust than whole cells so it is the prefer method for degraded samples or hard to dissociate tissues that require harsh conditions. Nuclei are enriched in pre-mRNA but have less RNA than a whole cell so they are great for RNA velocity but less reads per cell can be recovered. See [this discussion](https://www.scdiscoveries.com/blog/single-nucleus-rna-sequencing-advantages-and-drawbacks/) by Single Cell Discoveries and [Ding2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7289686/) for more details.
 
 ## Bonus: Main metrics for common kits
 
