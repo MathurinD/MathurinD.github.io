@@ -117,6 +117,8 @@ Resolution: 3'-biased polyA gene products expression for individual cells
 
 ## Related publications
 
+- [Haque2017](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-017-0467-4): A practical guide to single-cell RNA-sequencing for biomedical research and clinical applications
+- [Kolodwiejskyk2015](https://www.cell.com/molecular-cell/fulltext/S1097-2765(15)00261-0): The Technology and Biology of Single-Cell RNA Sequencing
 - [Picelli2014](https://www.nature.com/articles/nprot.2014.006): SmartSeq2 foundational paper
 - [Rosenberg2018](https://www.science.org/doi/10.1126/science.aam8999): Single-cell profiling of the developing mouse brain and spinal cord with split-pool barcoding (Parse Bioscience foundational paper)
 - [Zheng2017](https://www.nature.com/articles/ncomms14049): Massively parallel digital transcriptional profiling of single cells (10x genomics foundational paper)
