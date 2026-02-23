@@ -7,7 +7,10 @@ redirect_from:
   - /sequencing_costs.html
 ---
 
-This page references manufacturer prices (in 2025 euros, see [genohub](https://genohub.com/high-throughput-sequencers/) for dollar costs). If you have access to a sequencing core facility (university or company) that has the appropriate device you can get those prices or cheaper depending on what was negotiated with the supplier (or not [NCSU](https://research.ncsu.edu/gsl/pricing/#nextgen), [Feinberg School of Medicine](https://www.cgm.northwestern.edu/cores/nuseq/pricing.html#price-link1) or [NCI](https://crtp.ccr.cancer.gov/sf/pricing/)). If you have to go through a third party (Eurofins, CeGaT, etc) plan to pay about double the amount but they should have the latest sequencers available.
+This page references manufacturer prices in 2025 euros (see [genohub](https://genohub.com/high-throughput-sequencers/) for dollar costs) for products available in Europe. Other actors not available in Europe and the USA such as [GeneMind](https://en.genemind.com/products) are not included.
+I can also recommend [this piece by Latch Bio](https://blog.latch.bio/p/a-primer-on-ngs-technologies-and) for a more detailed overview of the various sequencing technologies.
+
+If you have access to a sequencing core facility (university or company) that has the appropriate device you can get those prices or cheaper depending on what was negotiated with the supplier (or not [NCSU](https://research.ncsu.edu/gsl/pricing/#nextgen), [Feinberg School of Medicine](https://www.cgm.northwestern.edu/cores/nuseq/pricing.html#price-link1) or [NCI](https://crtp.ccr.cancer.gov/sf/pricing/)). If you have to go through a third party (Eurofins, CeGaT, etc) plan to pay about double the amount but they should have the latest sequencers available.
 
 Kits from each manufacturers exist in different sizes, bigger is always cheaper per read/Gb but if you cannot fill it the flowcells are more expensive.
 
