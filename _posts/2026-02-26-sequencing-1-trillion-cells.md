@@ -64,7 +64,7 @@ Assuming only 96 well plates for barcodes, here's a table summarising how many b
 
 There we have it, 7 rounds for 1 trillion cells.
 I hope you have a solid budget because sequencing even one read per cell is going to cost you over 100 billion dollars in 2026.
-I would wait for [sequencing costs](./sequencing_costs.html) to drop a bit more that.
+I would wait for [sequencing costs](/sequencing_costs) to drop a bit more than that.
 But how much did the barcoding cost ?
 There are multiple constraints there: you need to buy enough plates to get the barcodes, you need enough oligos in each well to barcode all the cells it contains, but you also need to fit the cells in the well (about 12 billion cells per well for 1 trillion total cells, taking into account the minor cells loss between barcoding rounds) with enough liquid between them for fluid and the oligos it contains to circulate.
 
