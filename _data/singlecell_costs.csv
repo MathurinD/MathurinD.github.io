@@ -1,9 +1,10 @@
-Techology,Year,Cells per run,Cost per run,Cost/cell,Multiplexing,Min Cost per Sample,Link
-10X Genomics GEM-X Universal 3' Gene Expression,2024,20k,1573,0.07,No,1573,https://www.10xgenomics.com/store/product-catalog
-Parse Bioscience Evercode WT v3,2024,100k,10000,0.1,48,208,https://www.parsebiosciences.com/products/evercode-wt/
-Parse Bioscience Evercode Mega v3,2024,1M,20000,0.02,384,52,https://www.parsebiosciences.com/products/evercode-wt-mega/
-Illumina Single Cell 3' RNA Prep T10,2025,10k,625,0.06,No,625,https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits/single-cell-rna-prep.html#tabs-2442e1bdc3-item-1ecee5b249-order
-Illumina Single Cell 3' RNA Prep T100,2025,100k,3425,0.03,No,3425,https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits/single-cell-rna-prep.html#tabs-2442e1bdc3-item-1ecee5b249-order
-Scale Bioscience QuantumScale Modular,2024,160k,4800,0.03,16,300,https://scale.bio/single-cell-rna-sequencing-kit/
-Scale Bioscience QuantumScale Large,2024,2M,28000,0.015,384,73,https://scale.bio/single-cell-rna-sequencing-kit/
-SmartSeq2,2014,96,90,2,96,2,https://www.takarabio.com/products/next-generation-sequencing/rna-seq/legacy-rna-seq-kits/smart-seq-single-cell-for-scrna-seq
+Techology,Year,Cells per run,Cost per run,Cost/cell,Multiplexing,Min Cost per Sample,Capture rate,Doublet rate,Link
+10X Genomics GEM-X Universal 3' Gene Expression,2024,20k,1573,0.07,No,1573,,,https://www.10xgenomics.com/store/product-catalog
+Parse Bioscience Evercode WT v3,2024,100k,10000,0.1,48,208,30,2.3,https://www.parsebiosciences.com/products/evercode-wt/
+Parse Bioscience Evercode Mega v3,2024,1M,20000,0.02,384,52,30,2.5,https://www.parsebiosciences.com/products/evercode-wt-mega/
+Parse Bioscience Evercode Penta v3,2024,5M,40000,0.008,384,104,30,2,https://www.parsebiosciences.com/products/evercode-wt-penta/
+Illumina Single Cell 3' RNA Prep T10,2025,10k,625,0.06,No,625,,,https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits/single-cell-rna-prep.html#tabs-2442e1bdc3-item-1ecee5b249-order
+Illumina Single Cell 3' RNA Prep T100,2025,100k,3425,0.03,No,3425,,,https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits/single-cell-rna-prep.html#tabs-2442e1bdc3-item-1ecee5b249-order
+Scale Bioscience QuantumScale Modular,2024,160k,4800,0.03,16,300,,,https://scale.bio/single-cell-rna-sequencing-kit/
+Scale Bioscience QuantumScale Large,2024,2M,28000,0.015,384,73,,,https://scale.bio/single-cell-rna-sequencing-kit/
+SmartSeq2,2014,96,90,2,96,2,,,https://www.takarabio.com/products/next-generation-sequencing/rna-seq/legacy-rna-seq-kits/smart-seq-single-cell-for-scrna-seq
